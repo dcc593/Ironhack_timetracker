@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   get "/projects/:id", to: "projects#show"
 
+  get "/projects/:project_id/time_entries", to: "time_entries#index"
+
 
 end
