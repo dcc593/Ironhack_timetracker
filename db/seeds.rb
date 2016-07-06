@@ -11,4 +11,8 @@ projectB = Project.create(name: "Papa Johns", description: "Decent chain for piz
 projectC = Project.create(name: "Taco Bell")
 
 
+TimeEntry.create(project_id: projectB.id , hours: 2, minutes: 30, comments: "Eating one whole pizza", date: Time.now)
+TimeEntry.create(project_id: projectB.id , hours: 1, minutes: 30, comments: "Pizza Sale", date: Time.now)
+TimeEntry.create(project_id: projectC.id , hours: 1, minutes: 0, comments: "Five dollar box", date: Time.now)
+
 puts "done"
