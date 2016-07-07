@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   #but then we need to actually change the form after it is edited so we need a update route modify
   #patch is to update
   patch "/projects/:project_id/time_entries/:id", to: "time_entries#update", as: "project_time_entry"
+
+  delete "/projects/:project_id/time_entries/:id", to: "time_entries#destroy"
 end
