@@ -12,5 +12,13 @@ Rails.application.routes.draw do
 
   get "/projects/:project_id/time_entries", to: "time_entries#index"
 
+  get "/projects/:project_id/time_entries/new", to: "time_entries#new"
 
+  post "/projects/:project_id/time_entries", to: "time_entries#create", as: :project_time_entries
+
+  get "/projects/:project_id/time_entries/:id/edit", to: "time_entries#edit" 
+  #for edit we will see the form with the stuff in order to edit
+  #but then we need to actually change the form after it is edited so we need a update route modify
+  #patch is to update
+  patch "/projects/:project_id/time_entries/:id", to: "time_entries#update", as: "project_time_entry"
 end

@@ -1,0 +1,45 @@
+
+<% if @my_entry.errors.any? %>
+	<ul>
+		<% @my_entry.errors.full_messages.each do |error_msg| %>
+		<li> <%= error_msg %></li>
+		<% end %>
+	</ul>
+	<% end %>
+
+
+
+<%= form_for [@my_project, @my_entry] do |f| %> <!-- form for method is for models only -->
+
+<div>
+	<%= f.label :hours %>
+	<%= f.text_field :hours, size:4 %>
+</div>
+
+<br>
+
+<div>
+	<%= f.label :minutes %>
+	<%= f.text_field :minutes, size:4 %>
+</div>
+
+<br>
+
+<div>
+	<%= f.label :date %>
+	<%= f.date_field :date, size:4 %>
+</div>
+
+<br>
+
+<div>
+	<%= f.label :comments %>
+	<%= f.text_area :comments %>
+</div>
+
+<br>
+
+	<%= f.button %>
+
+	<%= link_to "Cancel", project_time_entries_path(@my_project) %>
+<% end %>
